@@ -1,14 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,800&display=swap');
 
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
-body {
+
+html,
+body,
+#root {
   width: 100%;
   margin: 0 auto;
   background: #e3e3d8;
   color: #2b1700;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }

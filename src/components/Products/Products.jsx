@@ -1,5 +1,6 @@
 import ProductItem from '../ProductItem/ProductItem';
 import './Products.css';
+import { Link } from 'react-router-dom';
 
 export default function Products({ products, isLoading }) {
   return (
@@ -14,7 +15,9 @@ export default function Products({ products, isLoading }) {
           products.map(product => {
             return (
               <li key={product.id} className="product-item">
-                <ProductItem item={product} />
+                <Link to={`/products/${product.id}`}>
+                  <ProductItem item={product} />
+                </Link>
               </li>
             );
           })}
