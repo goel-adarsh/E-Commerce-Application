@@ -10,18 +10,18 @@
   cursor: pointer;
   width: 60px;
   height: 60px;
-  border: 0.1px solid rgba(41, 22, 0, 0.6);
+  border: 0.1px solid rgba(33, 33, 33, 0.7);
   border-right: none;
   font-size: 24px;
   transition: all 0.3s ease;
-  background-color: rgba(41, 22, 0, 0.5);
+  background-color: rgba(33, 33, 33, 0.5);
 }
 
 .pagination button:last-child {
-  border-right: 0.1px solid rgba(41, 22, 0, 0.6);
+  border-right: 0.1px solid rgba(33, 33, 33, 0.7);
 }
 
 .pagination button.active {
-  background: rgba(41, 22, 0, 0.9);
-  color: #e3e3d8;
+  background: rgba(33, 33, 33, 0.85);
+  color: #a2a2a2;
 }

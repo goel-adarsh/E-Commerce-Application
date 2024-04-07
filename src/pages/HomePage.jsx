@@ -23,13 +23,15 @@ export default function HomePage() {
           //   (currentPage - 1) * 10
         );
         const responseData = await response.json();
+        console.log(responseData);
         if (!response.ok) {
-          throw new Error('Unable to load the products :(');
+          throw new Error('');
         }
         setAvailableProducts(responseData.products);
       } catch (error) {
+        console.log(error);
         setError({
-          message: error.message || 'Unable to load the products :(',
+          message: 'Unable to load the products :(',
         });
       }
       setIsFetching(false);
@@ -56,7 +58,7 @@ export default function HomePage() {
           currentPage={currentPage}
         />
       )}
-      {error && <Error title={'An error occurred!'} message={error.message} />}
+      {error && <Error title={' An error occurred!'} message={error.message} />}
     </>
   );
 }
