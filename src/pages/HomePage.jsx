@@ -37,6 +37,8 @@ export default function HomePage() {
     indexOfLastProduct
   );
 
+  console.log('Curr Pg ' + currentPage);
+
   return (
     <>
       <Header />

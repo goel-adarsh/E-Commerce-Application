@@ -1,5 +1,5 @@
 import React from 'react';
-import './Pagination.css';
+import classes from './Pagination.module.css';
 
 export default function Pagination({
   totalProducts,
@@ -11,8 +11,9 @@ export default function Pagination({
   for (let i = 0; i < Math.ceil(totalProducts / productsPerPage); i++) {
     pages.push(i + 1);
   }
+
   return (
-    <div className="pagination">
+    <div className={classes.pagination}>
       {pages.map((page, index) => {
         return (
           <button

@@ -1,0 +1,138 @@
+.card {
+  width: 60%;
+  height: 650px;
+  margin: 75px auto;
+  background: #fff;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 15px 50px 10px rgba(0, 0, 0, 0.4);
+  align-items: center;
+}
+
+/* For Image Box */
+.card .imageBox {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  height: 100%;
+  background: rgba(33, 33, 33, 0.85);
+  transition: 0.3s linear;
+}
+
+/* For Main Image */
+.card .imageBox img {
+  position: relative;
+  left: -170px;
+  width: 100%;
+  height: 60%;
+  overflow: hidden;
+  transition: 0.9s linear;
+  border-radius: 10px;
+}
+
+/* For Image-Album*/
+.card .imageBox .imageAlbum {
+  width: 60px;
+  height: 60px;
+  margin-left: 50px;
+  margin-top: 24px;
+}
+
+/* Text Details of the Card */
+.card .details {
+  display: flex;
+  width: 55%;
+  height: 100%;
+  padding: 40px;
+}
+
+.card .details .title {
+  color: #444;
+  font-size: 2.4em;
+  line-height: 1em;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.card .details span {
+  color: #999;
+  font-size: 1em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1em;
+  text-align: left;
+  font-weight: bold;
+}
+
+.card .details .by {
+  text-transform: lowercase;
+  font-weight: 200;
+  letter-spacing: 0;
+}
+.card .details .brand {
+  color: #000;
+  opacity: 0.2;
+  font-weight: 800;
+}
+.card .details .rating {
+  font-size: 0.75em;
+}
+
+.card .details .description {
+  color: #333;
+  font-size: 17px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* Price Section */
+.card .details .discountedPrice {
+  color: #a2a2a2;
+  font-size: 2em;
+}
+
+.card .details .price {
+  color: #a2a2a2;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-decoration: line-through;
+  float: left;
+}
+
+.card .details .discountedPercentage {
+  font-size: 0.75em;
+  color: red;
+}
+
+/* For BUY NOW button */
+.card .details button {
+  clear: both;
+  cursor: pointer;
+  width: 300px;
+  height: 60px;
+  background: #444;
+  border: none;
+  border-radius: 40px;
+  padding: 15px 20px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  float: left;
+  margin-top: 24px;
+  margin-left: -10px;
+}
+
+.card .details button::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.card .details button:hover {
+  background-color: #000;
+}
