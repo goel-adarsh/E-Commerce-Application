@@ -1,27 +1,23 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-import './ProductDetails.css';
 import Error from '../../components/Error/Error';
+import { fetchData } from '../../utils/fetchData';
+
+import './ProductDetails.css';
 
 export default function ProductDetails() {
   let { productId } = useParams();
   const [isFetching, setIsFetching] = useState(false);
   const [productDetail, setproductDetail] = useState({});
   const [error, setError] = useState();
+  const [currentImage, setCurrentImage] = useState('');
 
   useEffect(() => {
     async function fetchProducts() {
       setIsFetching(true);
       try {
-        const response = await fetch(
-          `https://dummyjson.com/products/${productId}`
-        );
-        const responseData = await response.json();
-        if (!response.ok) {
-          throw new Error('Unable to load the products :(');
-        }
-        console.log(responseData);
+        const responseData = await fetchData(`products/${productId}`);
         setproductDetail(responseData);
       } catch (error) {
         setError({
@@ -33,6 +29,10 @@ export default function ProductDetails() {
     fetchProducts();
   }, []);
 
+  function handleCurrentImage(image) {
+    setCurrentImage(image);
+  }
+
   return (
     <>
       {error && <Error title={' An error occurred!'} message={error.message} />}
@@ -42,12 +42,34 @@ export default function ProductDetails() {
         </div>
       )}
       {!error && !isFetching && (
-        <div class="card">
-          <div class="imageBox">
-            <img src={productDetail.images?.[0]} alt={productDetail.title} />
+        <div className="card">
+          <div className="imageBox">
+            <img
+              src={currentImage || productDetail.images?.[0]}
+              alt={productDetail.title}
+              style={{ width: '100%', height: '60%', overflow: 'hidden' }}
+            />
+
+            <ul>
+              {productDetail.images?.map((image, index) => (
+                <li key={index}>
+                  <img
+                    style={{
+                      width: '60px',
+                      height: '60px',
+                      marginLeft: '50px',
+                      marginTop: '24px',
+                    }}
+                    src={image}
+                    alt=""
+                    onClick={() => handleCurrentImage(image)}
+                  />
+                </li>
+              ))}
+            </ul>
           </div>
-          <div class="details">
-            <div class="content">
+          <div className="details">
+            <div className="content">
               <h2 className="title">{productDetail.title}</h2>
               <span className="category">{productDetail.category} </span>{' '}
               <span

@@ -7,7 +7,7 @@ export default function Products({ products, isLoading }) {
     <section>
       <h2>Available Products</h2>
       <ul className="products">
-        {isLoading && <span class="loader"></span>}
+        {isLoading && <span className="loader"></span>}
         {!isLoading && products.length === 0 && (
           <p className="fallback-text">No Products found.</p>
         )}

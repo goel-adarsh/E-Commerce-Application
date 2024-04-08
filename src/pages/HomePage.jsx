@@ -4,6 +4,7 @@ import Header from '../components/Header/Header';
 import Products from '../components/Products/Products';
 import Error from '../components/Error/Error';
 import Pagination from '../components/Pagination/Pagination';
+import { fetchData } from '../utils/fetchData';
 
 export default function HomePage() {
   const [availableProducts, setAvailableProducts] = useState([]);
@@ -17,19 +18,9 @@ export default function HomePage() {
     async function fetchProducts() {
       setIsFetching(true);
       try {
-        const response = await fetch(
-          `https://dummyjson.com/products?limit=0`
-          // ?limit=10&skip=${
-          //   (currentPage - 1) * 10
-        );
-        const responseData = await response.json();
-        console.log(responseData);
-        if (!response.ok) {
-          throw new Error('');
-        }
+        const responseData = await fetchData('products?limit=0');
         setAvailableProducts(responseData.products);
       } catch (error) {
-        console.log(error);
         setError({
           message: 'Unable to load the products :(',
         });

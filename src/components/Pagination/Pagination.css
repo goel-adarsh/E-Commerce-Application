@@ -11,10 +11,12 @@
   width: 60px;
   height: 60px;
   border: 0.1px solid rgba(33, 33, 33, 0.7);
+  border-radius: 50%;
   border-right: none;
   font-size: 24px;
   transition: all 0.3s ease;
   background-color: rgba(33, 33, 33, 0.5);
+  margin-right: 20px;
 }
 
 .pagination button:last-child {
