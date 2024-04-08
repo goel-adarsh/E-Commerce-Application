@@ -19,7 +19,7 @@ export default function Pagination({
           <button
             key={index}
             onClick={() => setCurrentPage(page)}
-            className={page == currentPage ? 'active' : ''}
+            className={page == currentPage ? `${classes.active}` : ''}
           >
             {page}
           </button>
