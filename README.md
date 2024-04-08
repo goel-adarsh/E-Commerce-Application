@@ -1,5 +1,6 @@
 # E-Commerce Application
 
+Steps to start the E-Commerce Application :
 1. Clone the repository into the local machine using the command "git clone https://github.com/goel-adarsh/E-Commerce-Application" in the cmd.
 2. Change the directory to "E-Commerce-Application".
 3. Run "npm install" in the cmd to install all the required dependencies.
